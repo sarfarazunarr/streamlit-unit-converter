@@ -24,7 +24,7 @@ def unit_converter(dimension, unit_from, unit_to, value):
             if dimension == "temperature":
 
                 
-                conversion_key = f"{unit_from} -> {unit_to}"
+                conversion_key = f"{unit_from}_to_{unit_to}"
                 if conversion_key in Units["temperature"]:
                     return Units["temperature"][conversion_key](value)
                 else:
