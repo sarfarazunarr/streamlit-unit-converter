@@ -62,6 +62,6 @@ if dimension:
         if from_value:
             result = unit_converter(dimension, unit_from, unit_to, from_value)
             if result is not None:
-                st.text_input(label="Output Value",value=f" {from_value} {unit_from} = {result:.2f} {unit_to}", disabled=True)
+                st.text_input(label="Output Value",value=f" {from_value} {unit_from} = {result:.2f} {unit_to}")
             elif result is None:
                 st.text("Output will be display here...")
