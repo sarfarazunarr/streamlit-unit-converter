@@ -9,14 +9,6 @@ Units = {
         "km": 1000,        # Kilometer to meter
         "mi": 1609.34      # Mile to meter
     },
-    "temperature": {
-        "C_to_F": lambda c: (c * 9/5) + 32,   # Celsius to Fahrenheit
-        "F_to_C": lambda f: (f - 32) * 5/9,   # Fahrenheit to Celsius
-        "C_to_K": lambda c: c + 273.15,       # Celsius to Kelvin
-        "K_to_C": lambda k: k - 273.15,       # Kelvin to Celsius
-        "F_to_K": lambda f: (f - 32) * 5/9 + 273.15,  # Fahrenheit to Kelvin
-        "K_to_F": lambda k: (k - 273.15) * 9/5 + 32   # Kelvin to Fahrenheit
-    },
     "time": {
         "sec": 1,         # Second (base unit)
         "min": 60,        # Minute to seconds

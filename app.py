@@ -13,7 +13,7 @@ def unit_converter(dimension, unit_from, unit_to, value):
         return None
 
     try:
-        value = float(value) 
+        value = float(value)  # Convert input to float
     except ValueError:
         st.error("Invalid input! Please enter a numerical value.")
         return None
@@ -21,20 +21,8 @@ def unit_converter(dimension, unit_from, unit_to, value):
     if dimension in Units:
         # Check if the units exist in the selected dimension
         if unit_from in Units[dimension] and unit_to in Units[dimension]:
-            if dimension == "temperature":
-
-                
-                conversion_key = f"{unit_from}_to_{unit_to}"
-                if conversion_key in Units["temperature"]:
-                    return Units["temperature"][conversion_key](value)
-                else:
-                    st.error("Invalid temperature conversion!")
-                    return None
-            else:
-
-                # Convert to base unit first, then to target unit
                 base_value = value * Units[dimension][unit_from]  # Convert to base unit
-                converted_value = base_value / Units[dimension][unit_to]
+                converted_value = base_value / Units[dimension][unit_to]  # Convert to target unit
                 return converted_value
         else:
             st.error("Selected units are not available for this dimension!")
@@ -62,6 +50,6 @@ if dimension:
         if from_value:
             result = unit_converter(dimension, unit_from, unit_to, from_value)
             if result is not None:
-                st.text_input(label="Output Value",value=f" {from_value} {unit_from} = {result:.2f} {unit_to}")
+                st.text_input(label="Output Value", value=f"{from_value} {unit_from} = {result:.2f} {unit_to}")
             elif result is None:
-                st.text("Output will be display here...")
+                st.text("Output will be displayed here...")
